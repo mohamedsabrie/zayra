@@ -17,7 +17,7 @@ function Breadcrumbs({ items }: { items: { title: string; href: string }[] }) {
                 <Image
                   height={12}
                   width={12}
-                  className="ml-4 "
+                  className="ml-4 w-auto h-auto "
                   src={ChevronRightIcon}
                   alt="arrow-right-icon"
                 />

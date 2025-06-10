@@ -1,6 +1,6 @@
 
-import Products from "@/components/Products";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
+import Products from "./_components/Products";
 export const dynamic = "force-static";
 
 export default async function Home() {
