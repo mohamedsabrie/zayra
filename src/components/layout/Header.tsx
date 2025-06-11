@@ -1,7 +1,7 @@
 import React from "react";
 import Navigation from "./Navigation";
-import Logo from "./ui/Logo";
-import CartIcon from "./ui/CartIcon";
+import Logo from "../ui/Logo";
+import CartIcon from "../ui/CartIcon";
 
 function Header() {
   return (
