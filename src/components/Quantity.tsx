@@ -21,7 +21,8 @@ function Quantity({
     if (handleAddToCart) {
       handleAddToCart();
     }
-  }, [quantity, handleAddToCart]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [quantity]);
 
   if (!mounted) {
     return <div className="border border-[#EEEEEE] flex items-center max-w-fit h-[54px]" />;

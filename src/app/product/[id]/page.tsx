@@ -1,61 +1,79 @@
-import { ProductType } from "@/lib/types";
 import Image from "next/image";
-import React from "react";
 import ProductDetails from "./_components/ProductDetails";
+import { getProduct, getProducts } from "@/lib/api/products";
+import { createMetadata } from "@/lib/utils/createMetadata";
+import { Metadata } from "next";
+import { ProductJsonLd } from "@/components/JsonLd";
 
-// Next.js will invalidate the cache when a
-// request comes in, at most once every 60 seconds.
-export const revalidate = 3600;
+// Cache configuration
+export const revalidate = 3600; // 1 hour
+export const dynamicParams = true;
 
-// We'll prerender only the params from `generateStaticParams` at build time.
-// If a request comes in for a path that hasn't been generated,
-// Next.js will server-render the page on-demand.
-export const dynamicParams = true; // or false, to 404 on unknown paths
-
+// Static paths generation
 export async function generateStaticParams() {
-  const products: ProductType[] = await fetch(
-    "https://fakestoreapi.com/products"
-  ).then((res) => res.json());
-  return products.map((products) => ({
-    id: String(products.id),
+  const products = await getProducts();
+  return products.map((product) => ({
+    id: String(product.id),
   }));
 }
 
-// Fix the params type in ProductPage
-async function ProductPage({ params }: { params: Promise<{ id: string }> }) {
-  const { id } = await params;  // Remove await since params is no longer a Promise
-
-  const data = await fetch(`https://fakestoreapi.com/products/${id}`);
-  const productData = await data.json();
-  const { image } = productData;
+// Main component
+export default async function ProductPage({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const { id } = await params;
+  const product = await getProduct(id);
+  const { image, title } = product;
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-8">
-      <div className="flex justify-center">
-        <div className="flex justify-center md:items-start aspect-[2/3] relative w-full max-w-[400px]">
-          <Image
-            width={400}
-            height={600}
-            src={image}
-            alt={productData.title}
-            className="object-contain"
-            priority={true}
-          />
+    <>
+      <ProductJsonLd
+        name={title}
+        description={product.description}
+        images={[image]}
+        price={product.price}
+        ratingValue={product.rating?.rate}
+        reviewCount={product.rating?.count}
+      />
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-8">
+        <div className="flex justify-center">
+          <div className="flex justify-center md:items-start aspect-[2/3] relative w-full max-w-[400px]">
+            <Image
+              width={400}
+              height={600}
+              src={image}
+              alt={title}
+              className="object-contain"
+              priority={true}
+            />
+          </div>
         </div>
+        <ProductDetails productData={product} />
       </div>
-      <ProductDetails productData={productData} />
-    </div>
+    </>
   );
 }
 
-
-
-// Add viewport export
+// Viewport configuration
 export const viewport = {
-  width: 'device-width',
-  initialScale: 1
+  width: "device-width",
+  initialScale: 1,
 };
 
-
-
-export default ProductPage;
+// Metadata generation
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}): Promise<Metadata> {
+  const { id } = await params;
+  const product = await getProduct(id);
+  return createMetadata({
+    title: product.title,
+    description: product.description,
+    images: [product.image],
+  });
+}

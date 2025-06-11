@@ -7,6 +7,7 @@ function ViewProductButton({ productId }: { productId: string | number }) {
 
   return (
     <button
+      type="button"
       onClick={() => push(`/product/${productId}`)}
       className="bg-white cursor-pointer text-gray-800 px-4 py-2 rounded-full text-sm font-medium transform -translate-y-2 group-hover:translate-y-0 transition-transform duration-300"
     >

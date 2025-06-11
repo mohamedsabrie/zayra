@@ -9,13 +9,13 @@ function Navigation() {
           <Link href="/">Home</Link>
         </li>
         <li>
-          <Link href="/categories">Categories</Link>
+          <Link href="/">Categories</Link>
         </li>
         <li>
-          <Link href="/about">About</Link>
+          <Link href="/">About</Link>
         </li>
         <li>
-          <Link href="/contact">Contact</Link>
+          <Link href="/">Contact</Link>
         </li>
       </ul>
     </nav>

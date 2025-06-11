@@ -11,7 +11,7 @@ function ProductDetails({ productData }: { productData: ProductType }) {
 
   return (
     <div>
-      <h3 className="text-sm text-mid-gray">Fasco</h3>
+      <h3 className="text-sm text-mid-gray">Zayra</h3>
       <span className="text-sm capitalize text-gray-500 mt-2 block">
         {productData.category}
       </span>
