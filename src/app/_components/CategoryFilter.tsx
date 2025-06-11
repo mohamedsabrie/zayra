@@ -34,7 +34,7 @@ const CategoryFilter: React.FC<CategoryFilterProps> = ({
 
   return (
     <div className="bg-white p-4 rounded-lg shadow-sm">
-      <h3 className="text-lg font-semibold mb-3">Categories</h3>
+      <h2 className="text-lg font-semibold mb-3">Categories</h2>
       <div className="space-y-2">
         {categories.map((category) => (
           <label

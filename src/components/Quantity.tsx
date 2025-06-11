@@ -33,11 +33,11 @@ function Quantity({
   };
 
   return (
-    <div className="border border-[#EEEEEE] flex items-center max-w-fit">
+    <div className="border border-[#EEEEEE] flex items-center max-w-fit h-[55px]">
       <button
         type="button"
         onClick={() => handleQuantityChange(quantity - 1)}
-        className="cursor-pointer w-10 flex items-center justify-center text-2xl py-3"
+        className="cursor-pointer w-[48px] h-full flex items-center justify-center text-2xl"
         aria-label="Decrease quantity"
       >
         <span className="w-[9px] bg-black h-[2px] inline-block" />
@@ -52,12 +52,12 @@ function Quantity({
           }
         }}
         aria-label="Quantity"
-        className="w-16 text-center focus:outline-none"
+        className="w-16 h-full text-center focus:outline-none"
       />
       <button
         type="button"
         onClick={() => handleQuantityChange(quantity + 1)}
-        className="text-center text-lg w-10 h-full cursor-pointer py-3"
+        className="text-center text-lg w-[48px] h-full cursor-pointer flex items-center justify-center"
         aria-label="Increase quantity"
       >
         +

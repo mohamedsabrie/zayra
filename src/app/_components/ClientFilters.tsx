@@ -14,7 +14,10 @@ const ClientFilters: React.FC<ClientFiltersProps> = ({ categories }) => {
 
   return (
     <div className="space-y-6">
-      <CategoryFilter categories={categories} searchParams={searchParams} />
+      <CategoryFilter 
+        categories={categories} 
+        searchParams={searchParams}
+      />
       <PriceRangeFilter searchParams={searchParams} />
     </div>
   );

@@ -34,8 +34,10 @@ function AddToCart({ product }: { product: ProductType }) {
         )}
         <button
           onClick={handleAddToCart}
-          className={` w-full flex-1   cursor-pointer     text-sm font-medium  transition-colors duration-200 ${
-            isHomePage ? "rounded-full px-3 py-1 bg-blue-600 hover:bg-blue-700 text-white" : "rounded-none px-6 py-3 border-black border   "
+          className={`w-full flex-1 cursor-pointer text-sm font-medium transition-colors duration-200 ${
+            isHomePage 
+              ? "rounded-full px-6 py-3 min-h-[44px] bg-blue-600 hover:bg-blue-700 text-white" 
+              : "rounded-none px-6 py-4 min-h-[48px] border-black border"
           }`}
         >
           Add To Cart

@@ -20,7 +20,7 @@ const PriceRangeFilter: React.FC<PriceRangeFilterProps> = ({ searchParams }) => 
 
   return (
     <div className="bg-white p-4 rounded-lg shadow-sm">
-      <h3 className="text-lg font-semibold mb-3">Price Range</h3>
+      <h2 className="text-lg font-semibold mb-3">Price Range</h2>
       <div className="space-y-4">
         <div className="flex items-center space-x-3">
           <PriceInput
