@@ -140,6 +140,13 @@ The application is deployed on Vercel with:
 - Automatic deployments on push
 - Preview deployments for PRs
 
+## 📊 Performance Metrics
+
+The application has been tested with Google PageSpeed Insights to ensure optimal performance. You can view the detailed performance report here:
+
+[![PageSpeed Report](public/report.png)](https://pagespeed.web.dev/analysis/https-zayra-beryl-vercel-app/ieo8r3h5mf?form_factor=mobile)
+
+[View Full Report](https://pagespeed.web.dev/analysis/https-zayra-beryl-vercel-app/ieo8r3h5mf?form_factor=mobile)
 
 ## 📞 Contact
 
