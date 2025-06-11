@@ -1,9 +1,9 @@
 # ZAYRA E-commerce
 
 [![Live Demo](https://img.shields.io/badge/demo-online-green.svg)](https://zayra-beryl.vercel.app/)
-[![Next.js](https://img.shields.io/badge/Next.js-14-black)](https://nextjs.org/)
+[![Next.js](https://img.shields.io/badge/Next.js-15-black)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)](https://www.typescriptlang.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.0-38B2AC)](https://tailwindcss.com/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.0-38B2AC)](https://tailwindcss.com/)
 
 A modern e-commerce platform built with Next.js 15, featuring a clean design and smooth shopping experience.
 
